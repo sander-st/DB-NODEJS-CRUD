@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Creando una base de datos para almacenar los datos de un usuario" />
+    <title>Guardar datos</title>
+
+    <!-- reset css -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+
+    <!-- icons fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+
+    <!-- my styles -->
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/styles.lib.css" />
+
+    <!-- scripts js -->
+    <script src="./components/header.js"></script>
+  </head>
+  <body>
+    <div class="bg-svg">
+      <img src="./images/bg.svg" alt="background svg">
+    </div>
+    <div class="content-app h-100">
+      <script>compHeader()</script>
+
+      <section class="content flex">
+        <div class="content-form m-a">
+          <h1>AGREGAR USUARIOS</h1>
+          <form class="form">
+            <div class="box-form">
+              <div class="form-group">
+                <label for="name">Nombre</label>
+                <div class="item-input">
+                  <input type="text" name="name" id="name" placeholder="Ingrese su nombre complet">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="lastname">Apellidos</label>
+                <div class="item-input">
+                  <input type="text" name="lastname" id="lastname" placeholder="Ingrese su apellido completo">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <div class="item-input">
+                  <input type="email" name="email" id="email" placeholder="example@gmail.com">
+                </div>
+              </div>
+              <div class="form-group form-colums">
+                <div class="form-group">
+                  <label for="dateOfBirth">F. Nacimiento</label>
+                  <div class="item-input">
+                    <input type="date" name="dateOfBirth" id="dateOfBirth" placeholder="24/02/1999">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="gender">Género</label>
+                  <div class="item-input">
+                    <select name="gender" id="gender">
+                      <option value="Hombre">Hombre</option>
+                      <option value="Mujer">Mujer</option>
+                      <option value="Otro">Otro</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="notes">Notas</label>
+                <div class="item-input">
+                  <textarea name="notes" id="notes" cols="30" rows="2"></textarea>
+                </div>
+              </div>
+            </div>
+            <!-- btn box -->
+            <div class="box-form">
+              <div class="form-group">
+                <button class="btn btn-primary" type="submit"><i class="fa-solid fa-floppy-disk"></i>Guardar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

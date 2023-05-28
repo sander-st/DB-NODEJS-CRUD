@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap');
+
+:root {
+  --color-primary: #E63118;
+  --color-light: #E6E5EB;
+  --color-success: #3ED925;
+  --color-warning: #DC9D24;
+  --color-temp: #920BD2;
+
+  --text-color-darked: #000;
+
+  --shadow-color: rgba(0, 0, 0, 0.25);
+
+  --bg-rgba-table-odd: rgba(229, 49, 24, 0.3);
+  --bg-rgba-table-even: rgba(229, 49, 24, 0.6);
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  height: 100vh;
+  background-color: #EBEBEB;
+}
+
+.bg-svg {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+}
+
+.header {
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0px 4px 4px var(--shadow-color);
+  backdrop-filter: blur(25px);
+}
+
+.brand {
+  display: inline-block;
+}
+/* .brand > img {
+  overflow: hidden;
+} */
+/* .navbar {} */
+
+.nav_content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navbar .item {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--text-color-darked);
+  transition: color 200ms ease-out;
+}
+
+.navbar .item:hover {
+  color: var(--color-primary);
+}
+
+.item.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.navbar .item i {
+  margin-right: 1rem;
+  font-size: 1.375em;
+}
+
+/* styles formulario */
+.content-form {
+  width: 432px;
+  padding: 1.5rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+}
+
+.item-input {
+  margin-top: 0.4rem;
+}
+
+.item-input input, .item-input select, .item-input textarea {
+  width: 100%;
+}
+
+.box-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.form-group label{
+  color: var(--color-primary);
+}
+
+.form-colums {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: space-between;
+}
+
+.form-group button {
+  width: 100%;
+}
+
+.form > .box-form:last-child {
+  margin-top: 1.5rem;
+}
+
+.content-form > h1 {
+  margin: 0 0 1.5rem;
+  text-align: center;
+  font-size: 1.375em;
+  color: var(--color-primary);
+}
+
+.content {
+  height: calc(100% - 55.82px);
+}
+
+.content-db {
+  width: 1110px;
+  height: 480px;
+  overflow: hidden;
+  padding: 1.5rem 0 0 0;
+}
+
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.table thead {
+  text-align: left;
+  padding: 1.4rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+
+.table td,
+.table th {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 1.4rem 1.5rem;
+  /* max-width: 20px; */
+}
+
+.table tbody tr{
+  cursor: pointer;
+  transition: background-color 200ms ease-out;
+}
+
+.table tbody tr:nth-child(odd){
+  background-color: var(--bg-rgba-table-odd);
+}
+
+.table tbody tr:nth-child(even){
+  background-color: var(--bg-rgba-table-even);
+}
+
+.table tbody tr:hover{
+  background-color: var(--color-primary);
+}
+
+.table th:first-child,
+.table td:first-child {
+  width: 60px; /* Ancho mínimo para la columna "Nº" */
+}
+
+.table-container {
+  /* border: 2px solid blue; */
+  height: calc(100% - 8.66rem);
+  overflow: auto;
+  position: relative;
+}
+.table tbody {
+  overflow: hidden;
+  height: 400px;
+}
+
+
+
+
+
+
+
+
+
+/* modificando los estilos de la barra de desplazamiento */
+/* Estilos para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: .4rem; /* Anchura de la barra */
+}
+
+/* Estilos para el riel de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background: var(--color-primary); /* Color de fondo del riel */
+}
+
+/* Estilos para el pulgar de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: var(--color-warning); /* Color del pulgar */
+  border-radius: .2rem;
+}
+
+/* Estilos cuando el cursor está sobre la barra de desplazamiento */
+::-webkit-scrollbar-thumb:hover {
+  background: red; /* Color del pulgar al pasar el cursor */
+}
