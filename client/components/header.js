@@ -1,7 +1,10 @@
-const compHeader = () => {
+function compHeader() {
   const urlPath = location.href,
     // nameUrl = fileURL.substring(fileURL.lastIndexOf("/") + 1),
-    urlNotDocument = urlPath.replace(/\/[^/]+$/, "");
+    urlNotDocument = urlPath.endsWith("/")
+      ? urlPath.slice(0, -1)
+      : urlPath.replace(/\/[^/]+$/, "");
+  // urlNotDocument = urlPath.replace(/\/[^/]+$/, "");
 
   const currentTarget = document.currentScript.parentNode;
   const header = `
@@ -11,7 +14,7 @@ const compHeader = () => {
     </div>
     <nav class="navbar" id="navbar">
       <ul class="nav_content">
-        <li class="nav_item"><a href="${urlNotDocument}/index.html" class="item"><i class="fa-solid fa-house"></i>Inicio</a></li>
+        <li class="nav_item"><a href="${urlNotDocument}/" class="item"><i class="fa-solid fa-house"></i>Inicio</a></li>
         <li class="nav_item"><a href="${urlNotDocument}/tables.html" class="item"><i class="fa-solid fa-table"></i>Tabla de Usuarios</a></li>
       </ul>
     </nav>
@@ -32,6 +35,9 @@ const compHeader = () => {
 
   // add class active a item nav
   [...document.querySelector("#navbar").querySelectorAll("a")]
-    .filter((items) => items.href === urlPath)[0]
+    .filter(
+      (items) =>
+        items.href.replace(/\.[^/.]+$/, "") === urlPath.replace(/\.[^/.]+$/, "")
+    )[0]
     .classList.add("active");
-};
+}
