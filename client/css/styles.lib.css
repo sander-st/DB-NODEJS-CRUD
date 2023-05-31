@@ -75,3 +75,57 @@ input:focus, input:hover, select:focus, select:hover, textarea:focus, textarea:h
   color: red;
 } */
 
+.box-tooltips {
+  position: absolute;
+  bottom: 3rem;
+  right: -100%;
+  z-index: 10;
+  background-color: rgba(66, 64, 64, 0.733);
+  padding: 1.2rem 1.5rem;
+  border-radius: .6rem 0 0 .6rem;
+  box-shadow: 0 .4rem .4rem var(--shadow-color);
+  transition: right 300ms ease-out;
+}
+
+.box-tooltips.active {
+  right: 0;
+  animation: hiddenRight 3s ease-out;
+}
+
+@keyframes hiddenRight {
+  from {
+    right: 0;
+  }
+  50% {
+    right: 0;
+  }
+  to {
+    right: -100%;
+  }
+}
+
+.box-tooltips > i, .box-tooltips > .tooltip-text {
+  display: inline;
+  color: var(--color-light);
+  font-weight: 600;
+}
+
+.box-tooltips > i {
+  font-size: 2.2rem;
+}
+
+.tooltip-text {
+  margin-left: 1rem;
+}
+
+.tooltip-success {
+  background-color: rgba(90, 188, 74, 0.74);
+}
+
+.tooltip-danger {
+  background: rgba(188, 74, 74, 0.74);
+}
+
+.tooltip-warning {
+  background: rgba(188, 184, 74, 0.74);
+}

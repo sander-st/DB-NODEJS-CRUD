@@ -2,6 +2,7 @@
 import morgan from "morgan";
 import { config } from "dotenv";
 import { app, expressJSON, router } from "./routes/index.js";
+import cors from "cors";
 
 // initializing
 config();
@@ -11,6 +12,7 @@ config();
 // midlewares
 app.use(morgan("dev"));
 app.use(expressJSON);
+app.use(cors({ origin: "http://localhost:3000" })); // esto vamos a desactiva para generar errores
 
 // routes
 app.use(router);

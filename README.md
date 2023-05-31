@@ -7,9 +7,11 @@
 - dontenv
 - mysql2
 - nodemon (dev)
+- cors
+  - usamos para la configuración de **Access-Control-Allow-Origin**
 
 ```bash
-npm i express morgan dontenv mysql2
+npm i express morgan dontenv mysql2 cors
 ```
 
 - instalar nodemon como dependencia de desarrollador
